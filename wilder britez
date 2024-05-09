@@ -1,0 +1,105 @@
+conhilos.py
+1 - 4.3s
+2 - 4.2s
+3 - 4.1s
+4 - 4.0s
+5 - 4.2s
+6 - 4.3s
+7 - 4.3s
+8 - 4.1s
+9 - 4.3s
+10 - 4.0s
+
+sinhilos.py
+
+1 - 7.6s
+2 - 7.4s
+3 - 7.5s
+4 - 7.6s
+5 - 8.1s
+6 - 7.5s
+7 - 7.6s
+8 - 8.5s
+9 - 7.8s
+10 - 7.9s
+A. Sé puede notar que es impredescible y que no sabes cuánto tiempo puede salirte
+B. no, no son iguales pero en el código conhilos.py a mi compañero le tocaron segundos muy similares al mío.
+C.
+1- El valor final es: 0
+Tomó 0.18s
+2- el valor final es: 0
+Tomó 0.14s
+3- el valor final es 0
+Tomó 0.13s
+4- 0
+Tomó 0.12s
+5- tomó 0.20s
+6- tomó 0.12s
+7- tomó 0.12s
+8- tomó 0.13s
+9. tomó 0.13s
+10- tomó 0.12s
+
+1- Valor final -79240
+Tomó 50.13s
+2- Valor final -48915
+Tomó 48.43s
+3- Valor final -295745
+Tomó 48.58s
+4- Valor final -159145
+Tomó 48.84s
+5- Valor final -499430
+Tomó 48.24s
+6- Valor final 247710
+Tomó 50.17s
+7- Valor final 261280
+Tomó 48.38s
+8- Valor final 500000
+Tomó 48.47s
+9- Valor final -203990
+Tomó 48.36s
+10- valor final 34715
+Tomó 48.58s
+
+Al sacar el # del código, se tardó más tiempo en ejecutarse y mostrarse en la terminal, constantemente se mostraban distintos resultados y segundos y con el # más o menos daban mismo tiempo y mismo valor final
+
+A. #include
+#include // Para utilizar mutex (bloqueo)
+
+std::mutex mtx; Mutex para proteger la región crítica
+
+void distribuirHamburguesas(int comensalID, int& hamburguesas) {
+mtx.lock();
+if (hamburguesas > 0) {
+std::cout << "Comensal " << comensalID << " recibe una hamburguesa." << std::endl;
+hamburguesas--;
+}
+mtx.unlock(); Desbloquear la región crítica
+}
+
+int main() {
+int totalHamburguesas = 10;
+const int numComensales = 3;
+
+// Crear hilos o procesos para cada comensal
+// Cada uno llama a distribuirHamburguesas(comensalID, totalHamburguesas)
+
+return 0;
+}
+
+B.
+#include
+
+int main() {
+int totalHamburguesas = 10;
+const int numComensales = 2;
+
+// Calcular la cantidad de hamburguesas por comensal
+int hamburguesasPorComensal = totalHamburguesas / numComensales;
+
+// Distribuir las hamburguesas
+std::cout << "Comensal 1 recibe " << hamburguesasPorComensal << " hamburguesa(s)." << std::endl;
+std::cout << "Comensal 2 recibe " << hamburguesasPorComensal << " hamburguesa(s)." << std::endl;
+
+return 0;
+}
